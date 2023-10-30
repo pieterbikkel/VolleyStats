@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B02F4822AE680B900B20013 /* DraggableRectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02F4802AE680B900B20013 /* DraggableRectangleLayer.swift */; };
+		2B02F48B2AE6B31900B20013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02F48A2AE6B31900B20013 /* AppDelegate.swift */; };
+		2B64E41F2AF00645002B664C /* CustomCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64E41E2AF00645002B664C /* CustomCameraView.swift */; };
+		2B64E4212AF00670002B664C /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64E4202AF00670002B664C /* CameraService.swift */; };
+		2B8540E22AD96987007BD34D /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8540E12AD96987007BD34D /* ButtonModifier.swift */; };
 		2B9AC7402AD6DE110084F1AB /* VolleyStatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */; };
 		2B9AC7422AD6DE110084F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC7412AD6DE110084F1AB /* ContentView.swift */; };
 		2B9AC7442AD6DE120084F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9AC7432AD6DE120084F1AB /* Assets.xcassets */; };
 		2B9AC7472AD6DE120084F1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9AC7462AD6DE120084F1AB /* Preview Assets.xcassets */; };
+		2B9AC74F2AD6E0500084F1AB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC74E2AD6E0500084F1AB /* SplashScreen.swift */; };
+		2B9AC7512AD6F6C10084F1AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC7502AD6F6C10084F1AB /* HomeView.swift */; };
+		2B9AC7542AD70A0E0084F1AB /* PositionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC7532AD70A0E0084F1AB /* PositionInstruction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B02F4802AE680B900B20013 /* DraggableRectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableRectangleLayer.swift; sourceTree = "<group>"; };
+		2B02F48A2AE6B31900B20013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B64E41E2AF00645002B664C /* CustomCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraView.swift; sourceTree = "<group>"; };
+		2B64E4202AF00670002B664C /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		2B8540E12AD96987007BD34D /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		2B9AC73C2AD6DE110084F1AB /* VolleyStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolleyStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyStatsApp.swift; sourceTree = "<group>"; };
 		2B9AC7412AD6DE110084F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B9AC7432AD6DE120084F1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B9AC7462AD6DE120084F1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2B9AC74E2AD6E0500084F1AB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		2B9AC7502AD6F6C10084F1AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2B9AC7532AD70A0E0084F1AB /* PositionInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionInstruction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +48,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B02F4842AE680DB00B20013 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2B02F4802AE680B900B20013 /* DraggableRectangleLayer.swift */,
+				2B02F48A2AE6B31900B20013 /* AppDelegate.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2B64E4222AF00A05002B664C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2B64E4202AF00670002B664C /* CameraService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2B8540E02AD96930007BD34D /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				2B8540E12AD96987007BD34D /* ButtonModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		2B9AC7332AD6DE110084F1AB = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +92,10 @@
 		2B9AC73E2AD6DE110084F1AB /* VolleyStats */ = {
 			isa = PBXGroup;
 			children = (
+				2B64E4222AF00A05002B664C /* Services */,
+				2B02F4842AE680DB00B20013 /* Utils */,
+				2B8540E02AD96930007BD34D /* Modifiers */,
+				2B9AC74D2AD6E0440084F1AB /* Views */,
 				2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */,
 				2B9AC7412AD6DE110084F1AB /* ContentView.swift */,
 				2B9AC7432AD6DE120084F1AB /* Assets.xcassets */,
@@ -65,6 +110,25 @@
 				2B9AC7462AD6DE120084F1AB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2B9AC74D2AD6E0440084F1AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B9AC7522AD709FB0084F1AB /* instructions */,
+				2B9AC74E2AD6E0500084F1AB /* SplashScreen.swift */,
+				2B9AC7502AD6F6C10084F1AB /* HomeView.swift */,
+				2B64E41E2AF00645002B664C /* CustomCameraView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B9AC7522AD709FB0084F1AB /* instructions */ = {
+			isa = PBXGroup;
+			children = (
+				2B9AC7532AD70A0E0084F1AB /* PositionInstruction.swift */,
+			);
+			path = instructions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +201,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B64E4212AF00670002B664C /* CameraService.swift in Sources */,
+				2B8540E22AD96987007BD34D /* ButtonModifier.swift in Sources */,
+				2B64E41F2AF00645002B664C /* CustomCameraView.swift in Sources */,
+				2B9AC74F2AD6E0500084F1AB /* SplashScreen.swift in Sources */,
+				2B9AC7512AD6F6C10084F1AB /* HomeView.swift in Sources */,
 				2B9AC7422AD6DE110084F1AB /* ContentView.swift in Sources */,
 				2B9AC7402AD6DE110084F1AB /* VolleyStatsApp.swift in Sources */,
+				2B02F4822AE680B900B20013 /* DraggableRectangleLayer.swift in Sources */,
+				2B9AC7542AD70A0E0084F1AB /* PositionInstruction.swift in Sources */,
+				2B02F48B2AE6B31900B20013 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +347,7 @@
 				DEVELOPMENT_TEAM = KB7MXFML57;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VolleyStats needs access to the camera for analyzing a volleyball match";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +377,7 @@
 				DEVELOPMENT_TEAM = KB7MXFML57;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VolleyStats needs access to the camera for analyzing a volleyball match";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
