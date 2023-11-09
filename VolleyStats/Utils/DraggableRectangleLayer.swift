@@ -9,7 +9,7 @@ import UIKit
 
 class DraggableRectangleView: UIView {
     
-    private var dragLayers: [CALayer] = []
+    var dragLayers: [CALayer] = []
     private var lines: [CAShapeLayer] = []
     private let touchExpansionMargin: CGFloat = 40
     
@@ -45,6 +45,10 @@ class DraggableRectangleView: UIView {
             lines.append(line)
         }
         updateLines()
+    }
+    
+    func getDragLayers() -> [CALayer] {
+        return dragLayers
     }
     
     private func updateDraggableLayersPositions() {

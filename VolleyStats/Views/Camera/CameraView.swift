@@ -9,12 +9,13 @@ import SwiftUI
 import AVFoundation
 
 struct CameraView: UIViewControllerRepresentable {
-    typealias UIViewControllerType = UIViewController
+    typealias UIViewControllerType = CameraViewController
     
     let cameraService: CameraService
+    @Binding var buttonPressed: Bool
     let didFinishProcessingVideo: (Result<AVCaptureVideoDataOutput, Error>) -> ()
     
-    func makeUIViewController(context: Context) -> UIViewController {
+    func makeUIViewController(context: Context) -> CameraViewController {
         cameraService.start(delegate: context.coordinator) { err in
             if let err = err {
                 didFinishProcessingVideo(.failure(err))
@@ -33,18 +34,23 @@ struct CameraView: UIViewControllerRepresentable {
         Coordinator(self, didFinishProcessingVideo: didFinishProcessingVideo)
     }
     
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    func updateUIViewController(_ cameraViewController: CameraViewController, context: Context) {
         self.cameraService.previewLayer.frame = UIScreen.main.bounds
+        cameraViewController.buttonPressed = buttonPressed
     }
     
     class Coordinator: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         let parent: CameraView
         private var didFinishProcessingVideo: (Result<AVCaptureVideoDataOutput, Error>) -> ()
         
-        init(_ parent: CameraView, 
+        init(_ parent: CameraView,
              didFinishProcessingVideo: @escaping (Result<AVCaptureVideoDataOutput, Error>) -> ()) {
             self.parent = parent
             self.didFinishProcessingVideo = didFinishProcessingVideo
+        }
+        
+        func setCourtPoints() {
+            
         }
         
         func videoOutput(_ output: AVCaptureVideoDataOutput, didFinishProcessingVideo video: AVCaptureVideoDataOutput, error: Error?) {

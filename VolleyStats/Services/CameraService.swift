@@ -44,30 +44,26 @@ class CameraService {
     
     private func setupCamera(completion: @escaping (Error?) -> ()) {
         let session = AVCaptureSession()
-        if let device = AVCaptureDevice.default(for: .video) {
-            do {
-                let input = try AVCaptureDeviceInput(device: device)
-                if session.canAddInput(input) {
-                    session.addInput(input)
-                }
-                
-                if session.canAddOutput(output) {
-                    session.addOutput(output)
-                }
-                
-                previewLayer.videoGravity = .resizeAspectFill
-                previewLayer.session = session
-                previewLayer.connection?.videoRotationAngle = 0
-                
-                DispatchQueue.global(qos: .background).async {
-                    session.startRunning()
-                }
-                
-                self.session = session
-            } catch {
-                completion(error)
-            }
+        guard let videoDevice = AVCaptureDevice.default(.builtInDualWideCamera, for: .video, position: .back) else { return }
+        guard let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice) else { return }
+        
+        if session.canAddInput(videoDeviceInput) {
+            session.addInput(videoDeviceInput)
         }
+        
+        if session.canAddOutput(output) {
+            session.addOutput(output)
+        }
+        
+        previewLayer.videoGravity = .resizeAspectFill
+        previewLayer.session = session
+        previewLayer.connection?.videoRotationAngle = 0
+        
+        DispatchQueue.global(qos: .background).async {
+            session.startRunning()
+        }
+        
+        self.session = session
     }
     
     func captureVideo(with settings: [String : Any] = [:]) {

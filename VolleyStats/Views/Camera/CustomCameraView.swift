@@ -12,6 +12,7 @@ struct CustomCameraView: View {
     
     @EnvironmentObject var router: Router
     @EnvironmentObject var settings: Settings
+    @State var buttonPressed = false
     
     // Camera
     let cameraService = CameraService()
@@ -31,7 +32,7 @@ struct CustomCameraView: View {
             Color.black
                 .ignoresSafeArea()
             
-            CameraView(cameraService: cameraService) { result in
+            CameraView(cameraService: cameraService, buttonPressed: $buttonPressed)  { result in
                 switch result {
                 case .success(let video):
                     print("Wow dit gaat werken \(video)")
@@ -45,7 +46,9 @@ struct CustomCameraView: View {
                 HStack {
                     if showCourtComformationButton {
                         Button {
-                            
+                            // TODO: print layers
+                            buttonPressed = true
+                            print("TAP \(buttonPressed)")
                         } label: {
                             Text("Zet veld vast")
                         }
