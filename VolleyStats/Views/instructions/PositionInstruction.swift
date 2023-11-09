@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct PositionInstruction: View {
     // Animation properties
     @State private var animationValues: [Bool] = Array(repeating: false, count: 10)
     @State private var openCameraView = false
+    @State var capturedVideo: AVCaptureVideoDataOutput? = nil
     
     var body: some View {
         VStack {
@@ -61,9 +63,12 @@ struct PositionInstruction: View {
         .onAppear {
             animate()
         }
-//        .fullScreenCover(isPresented: $openCameraView, content: {
-//            CameraViewControllerWrapper().navigationBarHidden(true).statusBarHidden()
-//        })
+        .fullScreenCover(isPresented: $openCameraView, content: {
+            CustomCameraView()
+                .onAppear(perform: {
+                    lockOrientation()
+                })
+        })
     }
     
     func animate() {
@@ -77,11 +82,17 @@ struct PositionInstruction: View {
             }
         }
     }
+    
+    private func lockOrientation() {
+        // Forcing the rotation to landscape
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        // And making sure it stays that way
+        AppDelegate.orientationLock = .landscape
+    }
 }
 
 #Preview {
     NavigationView {
         PositionInstruction()
-            
     }
 }

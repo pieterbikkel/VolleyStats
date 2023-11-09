@@ -18,7 +18,7 @@ class CameraService {
     
     func start(delegate: AVCaptureVideoDataOutputSampleBufferDelegate, completion: @escaping (Error?) -> ()) {
         self.delegate = delegate
-        
+        checkPermissions(completion: completion)
     }
     
     private func checkPermissions(completion: @escaping (Error?) -> ()) {
@@ -57,8 +57,12 @@ class CameraService {
                 
                 previewLayer.videoGravity = .resizeAspectFill
                 previewLayer.session = session
+                previewLayer.connection?.videoRotationAngle = 0
                 
-                session.startRunning()
+                DispatchQueue.global(qos: .background).async {
+                    session.startRunning()
+                }
+                
                 self.session = session
             } catch {
                 completion(error)

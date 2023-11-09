@@ -18,7 +18,6 @@ struct SplashScreen: View {
     
     var body: some View {
         ZStack {
-            
             // HomeView
             GeometryReader{ proxy in
             
@@ -32,7 +31,6 @@ struct SplashScreen: View {
             // SplashScreen
             ZStack {
                 VStack(spacing: 0) {
-                    
                     Image("volleyball")
                         .resizable()
                         .frame(width: volleyballSize, height: volleyballSize)

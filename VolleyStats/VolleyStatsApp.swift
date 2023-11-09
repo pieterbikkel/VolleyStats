@@ -11,10 +11,14 @@ import SwiftUI
 struct VolleyStatsApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var router = Router()
+    @StateObject var settings = Settings()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(router)
+                .environmentObject(settings)
         }
     }
 }

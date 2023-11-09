@@ -11,7 +11,7 @@ class DraggableRectangleView: UIView {
     
     private var dragLayers: [CALayer] = []
     private var lines: [CAShapeLayer] = []
-    private let touchExpansionMargin: CGFloat = 20
+    private let touchExpansionMargin: CGFloat = 40
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,10 +51,12 @@ class DraggableRectangleView: UIView {
         // Update positions based on your requirements
         // For example, set the positions in a rectangle formation
         // You can customize these positions as per your needs
-        dragLayers[0].position = CGPoint(x: 50, y: 20)
-        dragLayers[1].position = CGPoint(x: bounds.maxX - 50, y: 20)
-        dragLayers[2].position = CGPoint(x: 50, y: bounds.maxY - 20)
-        dragLayers[3].position = CGPoint(x: bounds.maxX - 50, y: bounds.maxY - 20)
+        let screenRect = UIScreen.main.bounds.size
+        
+        dragLayers[0].position = CGPoint(x: screenRect.width / 2 - 200, y: screenRect.height / 2 - 75)
+        dragLayers[1].position = CGPoint(x: screenRect.width / 2 + 200, y: screenRect.height / 2 - 75)
+        dragLayers[2].position = CGPoint(x: screenRect.width / 2 + 200, y: screenRect.height / 2 + 75)
+        dragLayers[3].position = CGPoint(x: screenRect.width / 2 - 200, y: screenRect.height / 2 + 75)
     }
     
     private func updateLines() {
@@ -62,8 +64,8 @@ class DraggableRectangleView: UIView {
         let path = UIBezierPath()
         path.move(to: dragLayers[0].position)
         path.addLine(to: dragLayers[1].position)
-        path.addLine(to: dragLayers[3].position)
         path.addLine(to: dragLayers[2].position)
+        path.addLine(to: dragLayers[3].position)
         path.close()
         
         for (_, line) in lines.enumerated() {
@@ -78,6 +80,8 @@ class DraggableRectangleView: UIView {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         if let touch = touches.first {
+            touch.gestureRecognizers?.first?.delaysTouchesBegan = false
+            touch.gestureRecognizers?.first?.delaysTouchesEnded = false
             let touchLocation = touch.location(in: self)
             for (_, layer) in dragLayers.enumerated() {
                 let touchRect = CGRect(x: layer.frame.minX - touchExpansionMargin,

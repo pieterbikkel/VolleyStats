@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var settings: Settings
+    @State var goToSettings = false
+    
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $router.path) {
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 15) {
@@ -29,31 +34,54 @@ struct HomeView: View {
                         }
                     }
                     .padding(.horizontal)
-                    
-                                        
                 }
                 
                 Spacer()
                 
-                NavigationLink {
-                    PositionInstruction()
-                } label: {
+                NavigationLink(value: 1) {
                     Text("Start analyse")
                 }
                 .buttonStyle(ButtonModifier())
-
-                
-                
             }
             .navigationTitle("Volley Stats")
+            .navigationDestination(for: Int.self) { value in
+                if settings.tooltipsEnabled {
+                    PositionInstruction()
+                } else {
+                    CustomCameraView()
+                        .onAppear(perform: {
+                            lockOrientation()
+                        })
+                        .navigationBarBackButtonHidden()
+                }
+            }
+            .navigationDestination(isPresented: $goToSettings, destination: {
+                SettingsView()
+            })
+            .toolbar {
+                Button(action: {
+                    goToSettings = true
+                }, label: {
+                    Image(systemName: "gear")
+                })
+            }
         }
         .onAppear() {
-            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation") // Forcing the rotation to portrait
-                        AppDelegate.orientationLock = .portrait // And making sure it stays that way
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
         }
+    }
+    
+    private func lockOrientation() {
+        // Forcing the rotation to landscape
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        // And making sure it stays that way
+        AppDelegate.orientationLock = .landscape
     }
 }
 
 #Preview {
     HomeView()
+        .environmentObject(Router())
+        .environmentObject(Settings())
 }
