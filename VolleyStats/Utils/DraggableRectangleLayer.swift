@@ -26,7 +26,7 @@ class DraggableRectangleView: UIView {
         for _ in 1...4 {
             let dragLayer = CALayer()
             dragLayer.bounds = CGRect(x: 0, y: 0, width: 20, height: 20)
-            dragLayer.backgroundColor = UIColor.blue.cgColor
+            dragLayer.backgroundColor = UIColor.red.cgColor
             dragLayer.cornerRadius = 10
             dragLayer.masksToBounds = true
             layer.addSublayer(dragLayer)
@@ -39,7 +39,8 @@ class DraggableRectangleView: UIView {
         // Create lines between the circles
         for _ in 1...4 {
             let line = CAShapeLayer()
-            line.strokeColor = UIColor.blue.cgColor
+            line.strokeColor = UIColor.red.cgColor
+            line.opacity = 0.5
             line.lineWidth = 2
             layer.addSublayer(line)
             lines.append(line)

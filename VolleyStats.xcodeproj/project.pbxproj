@@ -10,12 +10,13 @@
 		2B02F4822AE680B900B20013 /* DraggableRectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02F4802AE680B900B20013 /* DraggableRectangleLayer.swift */; };
 		2B02F48B2AE6B31900B20013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02F48A2AE6B31900B20013 /* AppDelegate.swift */; };
 		2B64E41F2AF00645002B664C /* CustomCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64E41E2AF00645002B664C /* CustomCameraView.swift */; };
-		2B64E4212AF00670002B664C /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64E4202AF00670002B664C /* CameraService.swift */; };
 		2B64E4252AF00C11002B664C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64E4242AF00C11002B664C /* CameraView.swift */; };
 		2B64E4272AF02A88002B664C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64E4262AF02A88002B664C /* CameraViewController.swift */; };
 		2B7ECB542AF1992900841C21 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7ECB532AF1992900841C21 /* Router.swift */; };
 		2B8137932AFCEDA200C802E4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8137922AFCEDA200C802E4 /* Settings.swift */; };
 		2B8137952AFCEEBB00C802E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8137942AFCEEBB00C802E4 /* SettingsView.swift */; };
+		2B8137992AFDA21E00C802E4 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8137982AFDA21E00C802E4 /* Detector.swift */; };
+		2B81379B2AFDA22700C802E4 /* ModelV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2B81379A2AFDA22700C802E4 /* ModelV3.mlmodel */; };
 		2B8540E22AD96987007BD34D /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8540E12AD96987007BD34D /* ButtonModifier.swift */; };
 		2B9AC7402AD6DE110084F1AB /* VolleyStatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */; };
 		2B9AC7422AD6DE110084F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC7412AD6DE110084F1AB /* ContentView.swift */; };
@@ -30,12 +31,13 @@
 		2B02F4802AE680B900B20013 /* DraggableRectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableRectangleLayer.swift; sourceTree = "<group>"; };
 		2B02F48A2AE6B31900B20013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B64E41E2AF00645002B664C /* CustomCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraView.swift; sourceTree = "<group>"; };
-		2B64E4202AF00670002B664C /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		2B64E4242AF00C11002B664C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		2B64E4262AF02A88002B664C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		2B7ECB532AF1992900841C21 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2B8137922AFCEDA200C802E4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2B8137942AFCEEBB00C802E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2B8137982AFDA21E00C802E4 /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		2B81379A2AFDA22700C802E4 /* ModelV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ModelV3.mlmodel; sourceTree = "<group>"; };
 		2B8540E12AD96987007BD34D /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		2B9AC73C2AD6DE110084F1AB /* VolleyStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolleyStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyStatsApp.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		2B02F4842AE680DB00B20013 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2B8137982AFDA21E00C802E4 /* Detector.swift */,
 				2B02F4802AE680B900B20013 /* DraggableRectangleLayer.swift */,
 				2B02F48A2AE6B31900B20013 /* AppDelegate.swift */,
 				2B7ECB532AF1992900841C21 /* Router.swift */,
@@ -72,7 +75,6 @@
 		2B64E4222AF00A05002B664C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2B64E4202AF00670002B664C /* CameraService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -120,6 +122,7 @@
 				2B9AC74D2AD6E0440084F1AB /* Views */,
 				2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */,
 				2B9AC7412AD6DE110084F1AB /* ContentView.swift */,
+				2B81379A2AFDA22700C802E4 /* ModelV3.mlmodel */,
 				2B9AC7432AD6DE120084F1AB /* Assets.xcassets */,
 				2B9AC7452AD6DE120084F1AB /* Preview Content */,
 			);
@@ -224,9 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B81379B2AFDA22700C802E4 /* ModelV3.mlmodel in Sources */,
 				2B8137952AFCEEBB00C802E4 /* SettingsView.swift in Sources */,
-				2B64E4212AF00670002B664C /* CameraService.swift in Sources */,
 				2B8540E22AD96987007BD34D /* ButtonModifier.swift in Sources */,
+				2B8137992AFDA21E00C802E4 /* Detector.swift in Sources */,
 				2B64E41F2AF00645002B664C /* CustomCameraView.swift in Sources */,
 				2B9AC74F2AD6E0500084F1AB /* SplashScreen.swift in Sources */,
 				2B8137932AFCEDA200C802E4 /* Settings.swift in Sources */,

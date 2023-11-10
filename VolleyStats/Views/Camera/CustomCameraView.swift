@@ -15,7 +15,7 @@ struct CustomCameraView: View {
     @State var buttonPressed = false
     
     // Camera
-    let cameraService = CameraService()
+    
 //    @Binding var capturedVideo: AVCaptureVideoDataOutput?
     
     // Messages
@@ -32,7 +32,7 @@ struct CustomCameraView: View {
             Color.black
                 .ignoresSafeArea()
             
-            CameraView(cameraService: cameraService, buttonPressed: $buttonPressed)  { result in
+            CameraView(buttonPressed: $buttonPressed)  { result in
                 switch result {
                 case .success(let video):
                     print("Wow dit gaat werken \(video)")
@@ -103,7 +103,7 @@ struct CustomCameraView: View {
                 Spacer()
                 
                 Button {
-                    cameraService.captureVideo()
+                //TODO: Record video
                 } label: {
                     Image(systemName: "circle")
                         .font(.system(size: 72))
@@ -126,20 +126,20 @@ struct CustomCameraView: View {
         if remainingTime <= 1 {
             showCourtComformationButton = true
         } else {
-            if remainingTime <= 14 && remainingTime >= 10 {
+            if remainingTime <= 14 {
                 withAnimation(.spring) {
                     animationValues[0] = true
                 }
             }
             
-            if remainingTime <= 10 {
+            if remainingTime <= 8 {
                 withAnimation(.spring) {
                     animationValues[0] = false
                     currentMessage = 1
                 }
             }
             
-            if remainingTime <= 6 {
+            if remainingTime <= 7 {
                 withAnimation(.spring) {
                     animationValues[0] = true
                 }

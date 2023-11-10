@@ -11,22 +11,13 @@ import AVFoundation
 struct CameraView: UIViewControllerRepresentable {
     typealias UIViewControllerType = CameraViewController
     
-    let cameraService: CameraService
     @Binding var buttonPressed: Bool
     let didFinishProcessingVideo: (Result<AVCaptureVideoDataOutput, Error>) -> ()
     
     func makeUIViewController(context: Context) -> CameraViewController {
-        cameraService.start(delegate: context.coordinator) { err in
-            if let err = err {
-                didFinishProcessingVideo(.failure(err))
-                return
-            }
-        }
         
-        let viewController = CameraViewController(previewLayer: self.cameraService.previewLayer)
+        let viewController = CameraViewController()
         viewController.view.backgroundColor = .black
-        viewController.view.layer.addSublayer(cameraService.previewLayer)
-        cameraService.previewLayer.frame = viewController.view.bounds
         return viewController
     }
     
@@ -35,7 +26,6 @@ struct CameraView: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ cameraViewController: CameraViewController, context: Context) {
-        self.cameraService.previewLayer.frame = UIScreen.main.bounds
         cameraViewController.buttonPressed = buttonPressed
     }
     

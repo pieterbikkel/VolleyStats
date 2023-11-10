@@ -9,5 +9,4 @@ import Foundation
 
 class Settings: ObservableObject {
     @Published var tooltipsEnabled: Bool = false
-    let cameraService = CameraService()
 }
