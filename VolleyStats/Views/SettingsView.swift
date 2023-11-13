@@ -23,6 +23,7 @@ struct SettingsView: View {
         }
         
         .navigationTitle("Instellingen")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

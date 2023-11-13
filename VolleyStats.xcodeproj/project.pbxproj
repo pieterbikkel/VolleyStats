@@ -17,6 +17,7 @@
 		2B8137952AFCEEBB00C802E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8137942AFCEEBB00C802E4 /* SettingsView.swift */; };
 		2B8137992AFDA21E00C802E4 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8137982AFDA21E00C802E4 /* Detector.swift */; };
 		2B81379B2AFDA22700C802E4 /* ModelV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2B81379A2AFDA22700C802E4 /* ModelV3.mlmodel */; };
+		2B81379D2AFE44A500C802E4 /* SourcePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81379C2AFE44A500C802E4 /* SourcePicker.swift */; };
 		2B8540E22AD96987007BD34D /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8540E12AD96987007BD34D /* ButtonModifier.swift */; };
 		2B9AC7402AD6DE110084F1AB /* VolleyStatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */; };
 		2B9AC7422AD6DE110084F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9AC7412AD6DE110084F1AB /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		2B8137942AFCEEBB00C802E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2B8137982AFDA21E00C802E4 /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
 		2B81379A2AFDA22700C802E4 /* ModelV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ModelV3.mlmodel; sourceTree = "<group>"; };
+		2B81379C2AFE44A500C802E4 /* SourcePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePicker.swift; sourceTree = "<group>"; };
 		2B8540E12AD96987007BD34D /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		2B9AC73C2AD6DE110084F1AB /* VolleyStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolleyStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9AC73F2AD6DE110084F1AB /* VolleyStatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyStatsApp.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				2B02F48A2AE6B31900B20013 /* AppDelegate.swift */,
 				2B7ECB532AF1992900841C21 /* Router.swift */,
 				2B8137922AFCEDA200C802E4 /* Settings.swift */,
+				2B81379C2AFE44A500C802E4 /* SourcePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				2B64E41F2AF00645002B664C /* CustomCameraView.swift in Sources */,
 				2B9AC74F2AD6E0500084F1AB /* SplashScreen.swift in Sources */,
 				2B8137932AFCEDA200C802E4 /* Settings.swift in Sources */,
+				2B81379D2AFE44A500C802E4 /* SourcePicker.swift in Sources */,
 				2B9AC7512AD6F6C10084F1AB /* HomeView.swift in Sources */,
 				2B64E4272AF02A88002B664C /* CameraViewController.swift in Sources */,
 				2B9AC7422AD6DE110084F1AB /* ContentView.swift in Sources */,

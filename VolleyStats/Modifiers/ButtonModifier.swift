@@ -12,7 +12,7 @@ struct ButtonModifier: ButtonStyle {
         configuration.label
             .font(.headline)
             .foregroundStyle(.white)
-            .padding(.horizontal, 90)
+            .padding(.horizontal)
             .padding()
             .background(Color(.accent))
             .cornerRadius(12)

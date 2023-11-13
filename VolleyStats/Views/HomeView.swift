@@ -6,42 +6,55 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct HomeView: View {
     
     @EnvironmentObject var router: Router
     @EnvironmentObject var settings: Settings
     @State var goToSettings = false
+    @State var showPicker = false
+    @State var assetURL: AVAsset?
     
     var body: some View {
         NavigationStack(path: $router.path) {
-            VStack {
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 15) {
-                        Text("Laatste Analyses")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack {
-                                ForEach(1...6, id: \.self) { index in
-                                    Rectangle()
-                                        .frame(width: 144, height: 100)
-                                        .foregroundColor(.gray.opacity(0.4))
-                                        .cornerRadius(8)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                }
+            VStack(spacing: 20) {
+//                ScrollView(.vertical, showsIndicators: false) {
+//                    VStack(alignment: .leading, spacing: 15) {
+//                        Text("Laatste Analyses")
+//                            .font(.title3)
+//                            .fontWeight(.semibold)
+//                        
+//                        ScrollView(.horizontal, showsIndicators: false) {
+//                            LazyHStack {
+//                                ForEach(1...6, id: \.self) { index in
+//                                    Rectangle()
+//                                        .frame(width: 144, height: 100)
+//                                        .foregroundColor(.gray.opacity(0.4))
+//                                        .cornerRadius(8)
+//                                }
+//                            }
+//                        }
+//                    }
+//                    .padding(.horizontal)
+//                }
                 
                 Spacer()
                 
-                NavigationLink(value: 1) {
-                    Text("Start analyse")
+                Button {
+                    showPicker.toggle()
+                } label: {
+                    Text("Analyseer video")
+                        .frame(minWidth: 190)
                 }
                 .buttonStyle(ButtonModifier())
+                
+                NavigationLink(value: 1) {
+                    Text("Start analyse")
+                        .frame(minWidth: 190)
+                }
+                .buttonStyle(ButtonModifier())
+                
             }
             .navigationTitle("Volley Stats")
             .navigationDestination(for: Int.self) { value in
@@ -64,6 +77,9 @@ struct HomeView: View {
                 }, label: {
                     Image(systemName: "gear")
                 })
+            }
+            .fullScreenCover(isPresented: $showPicker) {
+                UIImagePickerControllerRepresentable(assetURL: $assetURL, showScreen: $showPicker)
             }
         }
         .onAppear() {
